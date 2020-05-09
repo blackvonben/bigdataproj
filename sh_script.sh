@@ -31,11 +31,11 @@ hadoop fs -copyFromLocal yellow_tripdata_2018-12.csv in_csv/
 
 cd ..
 
-hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -files reducer.py,mapper.py -input in_csv\* -mapper mapper.py -reducer reducer.py -output out_python_final
+hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar -files reducer.py,mapper.py -input in_csv\* -mapper mapper.py -reducer reducer.py -output out_python_final_git
 
 mkdir out
 
-hadoop fs -copyFromLocal out_python_final out
+hadoop fs -copyFromLocal out_python_final_git out
 
 wget https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv
 wget https://raw.githubusercontent.com/blackvonben/bigdataproj/master/do_hive.hql
